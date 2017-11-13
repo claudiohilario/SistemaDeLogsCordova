@@ -19,7 +19,7 @@ var logToFile = {
 
             //Verifica a validade do ficheiro de log (10 dias)
 
-            if (this.logFileValidate(logFileName, this.logFileExpirationTime)) {
+            if (this.logFileValidate(logFileName, this.logFileExpirationDays)) {
                 //Válido
                 //Grava log no ficheiro
                 this.createLogFile(logFileName)
@@ -37,7 +37,7 @@ var logToFile = {
         }
     },
     logOb: null,
-    logFileExpirationTime: 10,
+    logFileExpirationDays: 10,
 
     info: function (text, tipo = 'INFO') {
         this.writeLog(text, tipo);
